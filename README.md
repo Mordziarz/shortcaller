@@ -40,7 +40,7 @@ B_6,B2_1.test.fq.gz,B2_2.test.fq.gz,B
 B_7,B3_1.test.fq.gz,B3_2.test.fq.gz,B
 B_8,B4_1.test.fq.gz,B4_2.test.fq.gz,B
 ```
-
+## Basic usage
 ```
 nextflow run main.nf --sample_table samples_table.csv --fasta reference_genome.fasta --gtf reference_gtf.gtf -profile standard
 ```
