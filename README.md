@@ -1,5 +1,5 @@
 # shortcaller
-A Nextflow pipeline for short-read RNA-seq analysis, supporting differential expression, alternative splicing.
+A Nextflow pipeline for short-read RNA-seq analysis, supporting differential expression and alternative splicing.
 
 ## Current Features
 * **Quality Control & Trimming:** FastQC and Fastp.
@@ -7,7 +7,7 @@ A Nextflow pipeline for short-read RNA-seq analysis, supporting differential exp
 * **Transcript Assembly & Quantification:** StringTie and FeatureCounts.
 * **Differential Expression Analysis:** DESeq2.
 * **Alternative Splicing Analysis:** rMATS.
-* **Downstream Analysis:** CPC2 (coding potential), TransDecoder, and alternative splicing consequence prediction.
+* **Downstream Analysis:** CPC2 (coding potential) and TransDecoder (NMD prediciton).
 
 ## Upcoming Features
 * Single Nucleotide Variant (SNV) calling
