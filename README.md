@@ -13,8 +13,6 @@ A Nextflow pipeline for short-read RNA-seq analysis, supporting differential exp
 * Single Nucleotide Variant (SNV) calling
 * Alternative Polyadenylation (APA)
 * Circular RNA (circRNA) detection
-* Gene fusion analysis
-* *Ultimate goal:* Comprehensive optimization for any short-read RNA-seq application across all organisms.
 
 ## Prerequisites & Environment
 The pipeline relies on a pre-built Docker container containing all necessary dependencies:
