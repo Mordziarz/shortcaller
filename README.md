@@ -52,7 +52,6 @@ nextflow run main.nf --sample_table samples_table.csv --fasta reference_genome.f
 | `fasta` | `null` | Path to the reference genome FASTA file (Required). |
 | `gtf` | `null` | Path to the reference annotation GTF file (Required). |
 | `strand` | `"rf"` | Library strand-specificity (`rf` for reverse-stranded, `fr` for forward, etc.). |
-| `trim_crop` | `140` | Maximum length limit for reads after trimming (applied to both reads). |
 | `trim_minlen` | `140` | Minimum length requirement for reads to pass filtering. |
 | `trim_avgqual` | `20` | Minimum average quality score (Phred) required for reads. |
 | `rmats_lib_type` | `"fr-firststrand"` | Library type parameter for rMATS. |
