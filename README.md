@@ -62,3 +62,11 @@ nextflow run main.nf --sample_table samples_table.csv --fasta reference_genome.f
 | `threads_stringtie` | `4` | CPU threads allocated to StringTie. |
 | `threads_featurecounts` | `4` | CPU threads allocated to FeatureCounts. |
 | `threads_rmats` | `8` | CPU threads allocated to rMATS. |
+
+## Differentially Expressed Genes Analysis
+
+## Differentially Alternative Splicing Analysis
+
+## Differentially Expressed Genes Analysis (DEGs, DELs, Hybrid)
+
+## Kmeans Genes Analysis
