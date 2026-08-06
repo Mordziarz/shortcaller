@@ -2,12 +2,12 @@
 A Nextflow pipeline for short-read RNA-seq analysis, supporting differential expression and alternative splicing.
 
 ## Current Features
-* **Quality Control & Trimming:** FastQC and Fastp.
-* **Alignment:** STAR.
-* **Transcript Assembly & Quantification:** StringTie and FeatureCounts.
-* **Differential Expression Analysis:** DESeq2.
-* **Alternative Splicing Analysis:** rMATS.
-* **Downstream Analysis:** CPC2 (coding potential) and TransDecoder (NMD prediciton).
+* **Quality Control & Trimming:** FastQC (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ ) and Fastp (https://doi.org/10.1093/bioinformatics/bty560).
+* **Alignment:** STAR (https://doi.org/10.1093/bioinformatics/bts635).
+* **Transcript Assembly & Quantification:** StringTie (https://doi.org/10.1038/nbt.3122) and FeatureCounts (https://doi.org/10.1093/bioinformatics/btt656).
+* **Differential Expression Analysis:** DESeq2 (https://doi.org/10.1186/s13059-014-0550-8).
+* **Alternative Splicing Analysis:** rMATS (https://doi.org/10.1073/pnas.1419161111).
+* **Downstream Analysis:** CPC2 (coding potential; https://doi.org/10.1093/nar/gkx428) and TransDecoder (NMD prediciton; https://github.com/TransDecoder/TransDecoder).
 
 ## Upcoming Features
 * Single Nucleotide Variant (SNV) calling
