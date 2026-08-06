@@ -71,4 +71,7 @@ nextflow run main.nf --sample_table samples_table.csv --fasta reference_genome.f
 
 ![Heatmap_DEGs](plots/Heatmap_DEGs.png)
 
+
+![circos_degs_dels_hybrid](plots/circos_DEGs_DELs_Hybrid.png)
+
 ## Kmeans Genes Analysis
