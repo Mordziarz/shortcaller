@@ -69,9 +69,21 @@ nextflow run main.nf --sample_table samples_table.csv --fasta reference_genome.f
 
 ## Differentially Expressed Genes Analysis (DEGs, DELs, Hybrid)
 
+![Volcano_DEGs](plots/Volcano_DEGs_DELs_Hybrid.png)
+
+![MA_DEGs](plots/MA_plot_DEGs_DELs_Hybrid.png)
+
+
 ![Heatmap_DEGs](plots/Heatmap_DEGs.png)
 
 
+![Heatmap_DEGs](plots/Heatmap_Top10_DELs.png)
+
+
+
+
 ![circos_degs_dels_hybrid](plots/circos_DEGs_DELs_Hybrid.png)
+
+
 
 ## Kmeans Genes Analysis
