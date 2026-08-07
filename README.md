@@ -8,6 +8,7 @@ A Nextflow pipeline for short-read RNA-seq analysis, supporting differential exp
 * **Differential Expression Analysis:** DESeq2 (https://doi.org/10.1186/s13059-014-0550-8).
 * **Alternative Splicing Analysis:** rMATS (https://doi.org/10.1073/pnas.1419161111) , sashimi plots (https://github.com/Xinglab/rmats2sashimiplot).
 * **Downstream Analysis:** CPC2 (coding potential; https://doi.org/10.1093/nar/gkx428) and TransDecoder (NMD prediciton; https://github.com/TransDecoder/TransDecoder).
+* **Visualization:** ComplexHeatmap (https://doi.org/10.1002/imt2.43), circlize (https://doi.org/10.1093/bioinformatics/btu393), ggplot2 (https://doi.org/10.1007/978-3-319-24277-4_9 )
 
   ![workflow](plots/workflow.jpg)
 
