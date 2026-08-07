@@ -65,7 +65,65 @@ nextflow run main.nf --sample_table samples_table.csv --fasta reference_genome.f
 
 ## Differentially Expressed Genes Analysis
 
+The `results/differential_expression` directory contains the results and visualization plots from standard differential expression analysis, without distinguishing between coding and non-coding transcripts:
+
+1. `Expression.csv` – A table containing all genes (both statistically significant and non-significant).
+
+**Example:**
+
+| GeneID | baseMean | log2FoldChange | lfcSE | pvalue | padj | LAND_2 | LAND_3 | LAND_4 | WATER_1 | WATER_2 | WATER_3 | WATER_4 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| CL.1 | 5,31 | 0,0392 | 0,4354 | NA | NA | 0 | 0 | 0 | 37,17 | 0 | 0 | 0 |
+| CL.10 | 263,40 | 0,0421 | 0,4237 | 0,6865 | 0,9019 | 368,18 | 217,44 | 0 | 407,35 | 43,10 | 640,96 | 166,77 |
+| CL.1000 | 6,90 | 0,0396 | 0,4355 | NA | NA | 0 | 0 | 0 | 48,32 | 0 | 0 | 0 |
+| CL.10000 | 6,37 | 0,0395 | 0,4355 | NA | NA | 0 | 0 | 0 | 44,60 | 0 | 0 | 0 |
+| CL.10003 | 5,52 | 0,0393 | 0,4354 | NA | NA | 0 | 0 | 0 | 38,65 | 0 | 0 | 0 |
+| CL.10004 | 5,71 | 0,0393 | 0,4354 | NA | NA | 0 | 0 | 0 | 0 | 0 | 0 | 39,97 |
+| CL.10005 | 1752,88 | 0,4610 | 0,2630 | 0,0335 | 0,1737 | 1168,98 | 1841,86 | 1096,83 | 2567,53 | 2131,72 | 1976,07 | 1487,17 |
+| CL.10006 | 830,27 | -0,1978 | 0,2414 | 0,3257 | 0,6799 | 972,62 | 913,62 | 873,56 | 703,21 | 732,68 | 968,44 | 647,79 |
+| CL.10007 | 0,70 | 0,0333 | 0,4341 | 0,4957 | NA | 0 | 0 | 0 | 0,74 | 4,14 | 0 | 0 |
+
+2. `Genes_sig.csv` – A table containing statistically significant genes filtered by absolute log2 fold change > 1 and padj < 0.05.
+
+**Example:**
+
+| GeneID | baseMean | log2FoldChange | lfcSE | pvalue | padj | LAND_2 | LAND_3 | LAND_4 | WATER_1 | WATER_2 | WATER_3 | WATER_4 | Expression | Transcripts |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| CL.10056 | 400,59 | -3,34 | 0,40 | 4,98e-18 | 8,57e-16 | 1129,10 | 670,60 | 695,81 | 72,85 | 72,94 | 103,56 | 59,27 | Downregulated | DEGs |
+| CL.1007 | 1756,87 | -1,21 | 0,24 | 4,37e-08 | 1,93e-06 | 3012,97 | 2994,86 | 1933,54 | 1010,95 | 1132,17 | 1097,20 | 1116,41 | Downregulated | DEGs |
+| CL.10171 | 277,20 | 1,19 | 0,59 | 0,0027 | 0,0295 | 171,82 | 174,50 | 47,69 | 270,58 | 445,90 | 464,63 | 365,24 | Upregulated | DEGs |
+| CL.10202 | 2265,56 | -2,09 | 0,28 | 1,04e-14 | 1,23e-12 | 4718,89 | 3551,25 | 3939,70 | 1306,81 | 643,16 | 1069,21 | 629,88 | Downregulated | DEGs |
+| CL.10348 | 22,63 | 7,46 | 3,24 | 5,99e-05 | 0,0013 | 0 | 0 | 0 | 37,17 | 45,58 | 34,99 | 40,66 | Upregulated | DEGs |
+| CL.10553 | 2085,90 | 1,43 | 0,25 | 1,37e-09 | 7,85e-08 | 935,80 | 1134,72 | 984,11 | 2047,18 | 3016,90 | 2625,44 | 3857,12 | Upregulated | DEGs |
+
+### Visualizations
+
+* **PCA plot**:
+  ![PCA](plots/PCA_plot.png)
+
+* **Volcano plot**:
+  ![Volcano_DEGs](plots/Volcano_DEGs.png)
+
+* **MA plot**:
+  ![MA_DEGs](plots/MA_plot_DEGs.png)
+
+* **Heatmap** showing all DEGs:
+  ![Heatmap_DEGs1](plots/Heatmap_DEGs1.png)
+        
+* **Heatmap** displaying the top 10 most significant DEGs:
+  ![Heatmap_DEGs2](plots/Heatmap_Top10_DEGs.png)
+          
+* **Circos plot** incorporating all DEGs:
+  1. The outermost track features a heatmap.
+  2. The inner dot plot track indicates up- or down-regulation.
+  ![Circos_degs1](plots/circoss_all_degs.png)
+
+* **Circos plot** restricted to the top 50 most significant DEGs:
+  ![Circos_degs2](plots/circoss_top50_degs.png)
+
 ## Differentially Alternative Splicing Analysis
+
+
 
 ## Differentially Expressed Genes Analysis (DEGs, DELs, Hybrid)
 
@@ -134,6 +192,7 @@ The `results/kmeans_results` directory contains the outputs for this section. I 
 
 1. `expression_classification.csv` – A table containing each gene categorized based on its Mean TPM in Group 1 (G1) and Group 2 (G2).
 
+**Example:**
 | Geneid | Length | Mean_TPM_G1 | Mean_TPM_G2 | Class_G1 | Class_G2 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | CL.1 | 205 | 0 | 0,94986 | No Expression | Low |
@@ -153,14 +212,14 @@ The `results/kmeans_results` directory contains the outputs for this section. I 
 
 ### Visualizations
 
-* Scatter plot showing clustering relative to Group 1 (G1):
+* **Example scatter plot** showing clustering relative to Group 1 (G1):
   ![expression_cluster1](plots/expression_cluster_g1.png)
 
-* Scatter plot showing clustering relative to Group 2 (G2):
+* **Example scatter plot** showing clustering relative to Group 2 (G2):
   ![expression_cluster2](plots/expression_cluster_g2.png)
 
-* Combined plot of both groups:
+* **Example scatter plot** combined plot of both groups:
   ![expression_cluster3](plots/expression_cluster.png)
 
-* Association between expression groups and significant alternative splicing events:
+* **Example barplot  plot** association between expression groups and significant alternative splicing events:
   ![expression_cluster4](plots/expression_cluster_type.png)
