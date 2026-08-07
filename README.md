@@ -121,9 +121,109 @@ The `results/differential_expression` directory contains the results and visuali
 * **Circos plot** restricted to the top 50 most significant DEGs:
   ![Circos_degs2](plots/circoss_top50_degs.png)
 
-## Differentially Alternative Splicing Analysis
+## Differential Alternative Splicing Analysis
 
+Results from the alternative splicing analysis are located across three directories: `results/splicing_plots_and_tables`, `results/sashimi_plots`, and `results/consequence_analysis`.
 
+### Splicing Plots and Tables
+
+In the `results/splicing_plots_and_tables` directory:
+
+1. `All_splicing_events.csv` – Contains all alternative splicing events, both statistically significant and non-significant.
+
+| GeneID | IncLevel1 | IncLevel2 | FDR | IncLevelDifference | ID | index | Type | OriginalType | Inclusion level | Significance |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| CL.47838 | 0.818,1.0,1.0 | 1.0,1.0,0.994,0.938 | 1 | 0,044 | 4 | CL.47838_7752_7777_7605_7638_8057_8194 | Not significant | SE | Not significant | Not Significant |
+| CL.47796 | NA,NA,1.0 | NA,1.0,0.725,1.0 | 1 | -0,092 | 9 | CL.47796_40326_40424_38899_39034_41171_41337 | Not significant | SE | Not significant | Not Significant |
+| CL.47765 | 0.95,1.0,1.0 | 1.0,1.0,0.922,1.0 | 1 | -0,003 | 10 | CL.47765_57220_57773_56603_56927_57895_58034 | Not significant | SE | Not significant | Not Significant |
+| CL.47451 | 1.0,0.338,1.0 | 1.0,0.937,1.0,0.733 | 1 | 0,138 | 11 | CL.47451_52139242_52139413_52138709_52138716_52139682_52139879 | Not significant | SE | Not significant | Not Significant |
+| CL.47451 | 1.0,0.485,1.0 | 1.0,0.959,1.0,0.726 | 1 | 0,093 | 12 | CL.47451_52139242_52139542_52138584_52138716_52139682_52140176 | Not significant | SE | Not significant | Not Significant |
+| CL.47400 | 1.0,1.0,1.0 | 0.328,1.0,1.0,1.0 | 1 | -0,168 | 13 | CL.47400_51647477_51647547_51647091_51647164_51647733_51647802 | Not significant | SE | Not significant | Not Significant |
+
+2. `Splicing_significant_results.csv` – Contains statistically significant splicing events filtered by absolute inclusion level difference > 0.1 and FDR < 0.05.
+
+| GeneID | IncLevel1 | IncLevel2 | FDR | IncLevelDifference | ID | index | Type | OriginalType | Inclusion level | Significance | LAND_1 | LAND_2 | LAND_3 | WATER_1 | WATER_2 | WATER_3 | WATER_4 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| CL.47260 | 0.94,0.761,0.763 | 0.254,0.457,0.256,0.524 | 5,64e-08 | -0,449 | 24 | CL.47260_50331332_50331424_50330435_50331185_50331550_50331923 | SE | SE | Lower | Significant | 0.94 | 0.761 | 0.763 | 0.254 | 0.457 | 0.256 | 0.524 |
+| CL.46180 | 0.755,0.754,0.873 | 1.0,1.0,1.0,1.0 | 3,87e-08 | 0,206 | 73 | CL.46180_39507146_39507207_39506870_39506939_39507455_39507595 | SE | SE | Higher | Significant | 0.755 | 0.754 | 0.873 | 1.0 | 1.0 | 1.0 | 1.0 |
+| CL.45381 | 0.542,0.258,0.691 | 0.929,1.0,1.0,0.341 | 0,0176 | 0,321 | 127 | CL.45381_32257917_32258365_32257104_32257298_32258519_32258632 | SE | SE | Higher | Significant | 0.542 | 0.258 | 0.691 | 0.929 | 1.0 | 1.0 | 0.341 |
+| CL.44377 | 1.0,1.0,1.0 | 0.55,0.922,1.0,0.712 | 0,0170 | -0,204 | 175 | CL.44377_22753504_22753681_22753272_22753380_22753801_22754019 | SE | SE | Lower | Significant | 1.0 | 1.0 | 1.0 | 0.55 | 0.922 | 1.0 | 0.712 |
+| CL.43158 | 0.347,0.183,0.187 | 0.59,0.645,0.555,0.428 | 5,59e-06 | 0,316 | 230 | CL.43158_11213091_11213161_11212755_11212840_11214079_11214353 | SE | SE | Higher | Significant | 0.347 | 0.183 | 0.187 | 0.59 | 0.645 | 0.555 | 0.428 |
+| CL.42984 | 0.14,0.281,0.409 | 0.443,0.435,1.0,0.564 | 0,0444 | 0,334 | 237 | CL.42984_9600472_9600665_9598942_9599072_9601997_9602982 | SE | SE | Higher | Significant | 0.14 | 0.281 | 0.409 | 0.443 | 0.435 | 1.0 | 0.564 |
+| CL.42948 | 1.0,0.379,0.673 | 0.0,0.56,0.166,0.201 | 0,0028 | -0,452 | 239 | CL.42948_9292647_9292888_9291371_9292063_9293173_9293486 | SE | SE | Lower | Significant | 1.0 | 0.379 | 0.673 | 0.0 | 0.56 | 0.166 | 0.201 |
+| CL.20232 | 0.08,0.0,0.0 | 0.264,0.082,0.258,0.371 | 0,0007 | 0,217 | 291 | CL.20232_43759625_43759722_43757519_43759435_43759937_43760706 | SE | SE | Higher | Significant | 0.08 | 0.0 | 0.0 | 0.264 | 0.082 | 0.258 | 0.371 |
+| CL.2837 | 1.0,1.0,1.0 | 0.321,0.592,1.0,0.763 | 0,0013 | -0,331 | 292 | CL.2837_25447734_25448003_25447305_25447388_25448518_25448888 | SE | SE | Lower | Significant | 1.0 | 1.0 | 1.0 | 0.321 | 0.592 | 1.0 | 0.763 |
+| CL.18376 | 0.03,0.28,0.251 | 0.476,0.433,0.426,0.705 | 0,0025 | 0,323 | 495 | - | - | - | - | - | 0.03 | 0.28 | 0.251 | 0.476 | 0.433 | 0.426 | 0.705 |
+
+3. Tables for significant processes categorized by event type individually (e.g., `SE_sashimi.txt` for skipped exon events):
+
+| ID | GeneID | geneSymbol | chr | strand | exonStart_0base | exonEnd | upstreamES | upstreamEE | downstreamES | downstreamEE | ID.1 | IJC_SAMPLE_1 | SJC_SAMPLE_1 | IJC_SAMPLE_2 | SJC_SAMPLE_2 | IncFormLen | SkipFormLen | PValue | FDR | IncLevel1 | IncLevel2 | IncLevelDifference |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 24 | CL.47260 | NA | chr8 | - | 50331332 | 50331424 | 50330435 | 50331185 | 50331550 | 50331923 | 24 | 155,106,219 | 6,20,41 | 152,84,20,119 | 269,60,35,65 | 231 | 139 | 8,98e-11 | 5,64e-08 | 0.94,0.761,0.763 | 0.254,0.457,0.256,0.524 | -0,449 |
+| 73 | CL.46180 | NA | chr8 | + | 39507146 | 39507207 | 39506870 | 39506939 | 39507455 | 39507595 | 73 | 80,88,217 | 18,20,22 | 262,305,198,254 | 0,0,0,0 | 200 | 139 | 2,68e-11 | 3,87e-08 | 0.755,0.754,0.873 | 1.0,1.0,1.0,1.0 | 0,206 |
+| 127 | CL.45381 | NA | chr8 | + | 32257917 | 32258365 | 32257104 | 32257298 | 32258519 | 32258632 | 127 | 135,91,170 | 27,62,18 | 659,201,166,70 | 12,0,0,32 | 587 | 139 | 0,000281 | 0,0176 | 0.542,0.258,0.691 | 0.929,1.0,1.0,0.341 | 0,321 |
+| 175 | CL.44377 | NA | chr8 | + | 22753504 | 22753681 | 22753272 | 22753380 | 22753801 | 22754019 | 175 | 73,114,80 | 0,0,0 | 86,135,53,146 | 31,5,0,26 | 316 | 139 | 0,000259 | 0,0170 | 1.0,1.0,1.0 | 0.55,0.922,1.0,0.712 | -0,204 |
+| 230 | CL.43158 | NA | chr8 | + | 11213091 | 11213161 | 11212755 | 11212840 | 11214079 | 11214353 | 230 | 4,34,40 | 5,101,116 | 188,101,30,126 | 87,37,16,112 | 209 | 139 | 2,33e-08 | 5,59e-06 | 0.347,0.183,0.187 | 0.59,0.645,0.555,0.428 | 0,316 |
+| 237 | CL.42984 | NA | chr8 | - | 9600472 | 9600665 | 9598942 | 9599072 | 9601997 | 9602982 | 237 | 14,95,48 | 36,102,29 | 93,112,151,198 | 49,61,0,64 | 332 | 139 | 0,001018 | 0,0444 | 0.14,0.281,0.409 | 0.443,0.435,1.0,0.564 | 0,334 |
+| 239 | CL.42948 | NA | chr8 | + | 9292647 | 9292888 | 9291371 | 9292063 | 9293173 | 9293486 | 239 | 59,20,62 | 0,12,11 | 0,115,24,46 | 183,33,44,67 | 380 | 139 | 2,69e-05 | 0,0028 | 1.0,0.379,0.673 | 0.0,0.56,0.166,0.201 | -0,452 |
+| 291 | CL.20232 | NA | chr3 | - | 43759625 | 43759722 | 43757519 | 43759435 | 43759937 | 43760706 | 291 | 10,0,0 | 68,34,33 | 53,18,23,71 | 87,118,39,71 | 236 | 139 | 4,32e-06 | 0,0007 | 0.08,0.0,0.0 | 0.264,0.082,0.258,0.371 | 0,217 |
+| 292 | CL.2837 | NA | chr1 | - | 25447734 | 25448003 | 25447305 | 25447388 | 25448518 | 25448888 | 292 | 32,59,86 | 0,0,0 | 25,81,15,85 | 18,19,0,9 | 408 | 139 | 8,84e-06 | 0,0013 | 1.0,1.0,1.0 | 0.321,0.592,1.0,0.763 | -0,331 |
+| 495 | CL.18376 | NA | chr3 | - | 27333020 | 27333124 | 27332699 | 27332779 | 27333288 | 27333366 | 495 | 3,51,31 | 55,75,53 | 135,107,48,92 | 85,80,37,22 | 243 | 139 | 2,25e-05 | 0,0025 | 0.03,0.28,0.251 | 0.476,0.433,0.426,0.705 | 0,323 |
+| 541 | CL.10104 | NA | chr2 | - | 16910084 | 16910215 | 16909704 | 16909834 | 16911447 | 16912172 | 541 | 48,70,162 | 0,0,0 | - | - | - | - | - | - | - | - | - |
+
+### Visualizations
+
+* **Barplot** showing both significant and non-significant splicing events:
+  ![Splicing1](plots/splicing_events_barplot.png)
+
+* **Barplot** showing only significant splicing events:
+  ![Splicing2](plots/splicing_events_total_barplot.png)
+
+* **Volcano plot** of splicing events:
+  ![Splicing3](plots/volcano_splicing.png)
+
+* **Circos plot** combining:
+  1. Five heatmaps, each color representing a different alternative splicing event.
+  2. A dot plot showing whether a given event is higher or lower based on the inclusion level difference.
+  3. Internal links connecting common alternative splicing events within the same gene.
+  ![Splicing4](plots/circlize_splicing_significant.png)
+
+---
+
+### Sashimi Plots
+
+In the `results/sashimi_plots` directory, you will find Sashimi plots for every significant alternative splicing event. Navigate into `sashimi_plots`, select the specific event type directory (e.g., `sashimi_RI_output`), and open the `Sashimi_plot` folder to find the corresponding PDF visualizations:
+
+![Splicing4](plots/splicing-1.png)
+
+---
+
+### Consequence Analysis
+
+The `results/consequence_analysis` directory contains:
+
+* `consequence_matrix.csv` – A table detailing the counts of protein-coding isoforms, NMD isoforms, significant events, and non-significant alternative splicing events in genes containing statistically significant splicing:
+
+| gene_id | Total_Isoforms | Protein_Coding | Non_Coding | NMD_Isoforms | Sig_RI | Sig_SE | Sig_A5SS | Sig_A3SS | Sig_MXE | All_A3SS | All_A5SS | All_RI | All_SE | All_MXE | total_splicing_events | NoSig_RI | NoSig_SE | NoSig_A5SS | NoSig_A3SS | NoSig_MXE |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| CL.10018 | 12 | 3 | 9 | 10 | 1 | 1 | 0 | 0 | 0 | 0 | 2 | 7 | 1 | 0 | 10 | 6 | 0 | 2 | 0 | 0 |
+| CL.10067 | 11 | 2 | 9 | 10 | 0 | 0 | 1 | 0 | 0 | 2 | 6 | 0 | 4 | 3 | 15 | 0 | 4 | 5 | 2 | 3 |
+| CL.10096 | 3 | 3 | 0 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2 | 0 | 0 | 3 | 1 | 0 | 1 | 0 | 0 |
+| CL.10104 | 5 | 5 | 0 | 5 | 1 | 1 | 1 | 0 | 0 | 0 | 3 | 4 | 1 | 0 | 8 | 3 | 0 | 2 | 0 | 0 |
+| CL.10192 | 4 | 4 | 0 | 2 | 0 | 0 | 0 | 1 | 0 | 2 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 1 | 0 |
+| CL.10252 | 8 | 8 | 0 | 6 | 0 | 0 | 1 | 0 | 0 | 1 | 2 | 2 | 1 | 0 | 6 | 2 | 1 | 1 | 1 | 0 |
+| CL.10354 | 5 | 4 | 1 | 4 | 0 | 0 | 0 | 1 | 0 | 4 | 1 | 1 | 5 | 0 | 11 | 1 | 5 | 1 | 3 | 0 |
+| CL.10564 | 6 | 6 | 0 | 6 | 0 | 0 | 1 | 0 | 0 | 1 | 2 | 3 | 0 | 0 | 6 | 3 | 0 | 1 | 1 | 0 |
+| CL.10584 | 4 | 4 | 0 | 2 | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 2 | 0 | 0 | 3 | 1 | 0 | 0 | 0 | 0 |
+| CL.10751 | 3 | 1 | 2 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 2 | 1 | 0 | 0 | 0 | 0 |
+| CL.10934 | 9 | 1 | 8 | 8 | 1 | 0 | 0 | 0 | 0 | 0 | 3 | 5 | 3 | 0 | 11 | 4 | 3 | 3 | 0 | 0 |
+| CL.11036 | 9 | 8 | 1 | 5 | 0 | 1 | 0 | 0 | 0 | 2 | 1 | 2 | 4 | 0 | 9 | 2 | 3 | 1 | 2 | 0 |
+| CL.11059 | 4 | 4 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 2 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 1 | 0 |
+
+### Visualization
+
+* **Combined plot** featuring a heatmap alongside barplots representing NMD and protein-coding transcripts for each significant gene containing at least one statistically significant alternative splicing event:
+  ![Splicing5](plots/splicing_consequence_CL.68.png)
 
 ## Differentially Expressed Genes Analysis (DEGs, DELs, Hybrid)
 
