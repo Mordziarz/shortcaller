@@ -128,9 +128,39 @@ The `results/DEGs_DELs_Hybrid` directory contains visualization plots and two pr
   3. Internal links connecting molecules with correlated expression profiles (default: FDR < 0.05 and r > 0.99).
   ![circos_degs_dels_hybrid](plots/circos_DEGs_DELs_Hybrid.png)
 
-## Kmeans Genes Analysis
+## K-means Gene Expression Analysis
 
-![expression_cluster1](plots/expression_cluster_g1.png)
-![expression_cluster2](plots/expression_cluster_g2.png)
-![expression_cluster3](plots/expression_cluster.png)
-![expression_cluster4](plots/expression_cluster_type.png)
+The `results/kmeans_results` directory contains the outputs for this section. I decided to implement expression categorization into "Low", "Medium", and "High" groups to determine what percentage of alternative splicing events fall into each expression tier, since standard differential expression analysis does not always provide a complete picture regarding the spliceosome context. K-means clustering was applied so the algorithm could objectively determine the boundaries between these groups.
+
+1. `expression_classification.csv` – A table containing each gene categorized based on its Mean TPM in Group 1 (G1) and Group 2 (G2).
+
+| Geneid | Length | Mean_TPM_G1 | Mean_TPM_G2 | Class_G1 | Class_G2 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| CL.1 | 205 | 0 | 0,94986 | No Expression | Low |
+| CL.2 | 269 | 0 | 0,57633 | No Expression | Low |
+| CL.3 | 193 | 0,07133 | 0,18681 | Low | Low |
+| CL.4 | 201 | 0 | 1,20127 | No Expression | Low |
+| CL.5 | 272 | 0,32069 | 0,28395 | Low | Low |
+| CL.6 | 1810 | 1,67597 | 2,04150 | Low | Low |
+| CL.7 | 204 | 0 | 0 | No Expression | No Expression |
+| CL.8 | 360 | 0 | 0 | No Expression | No Expression |
+| CL.9 | 612 | 4,41022 | 8,68292 | Medium | Medium |
+| CL.10 | 2029 | 1,79266 | 3,38957 | Low | Low |
+| CL.11 | 6267 | 39,54369 | 43,91635 | High | High |
+| CL.12 | 260 | 0 | 0,60178 | No Expression | Low |
+| CL.13 | 3360 | 17,10951 | 22,68621 | Medium | Medium |
+| CL.14 | 238 | 0 | 0 | No Expression | No Expression |
+
+### Visualizations
+
+* Scatter plot showing clustering relative to Group 1 (G1):
+  ![expression_cluster1](plots/expression_cluster_g1.png)
+
+* Scatter plot showing clustering relative to Group 2 (G2):
+  ![expression_cluster2](plots/expression_cluster_g2.png)
+
+* Combined plot of both groups:
+  ![expression_cluster3](plots/expression_cluster.png)
+
+* Association between expression groups and significant alternative splicing events:
+  ![expression_cluster4](plots/expression_cluster_type.png)
