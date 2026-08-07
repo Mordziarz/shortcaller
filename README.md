@@ -243,7 +243,6 @@ The `results/DEGs_DELs_Hybrid` directory contains visualization plots and two pr
 | CL.10348 | 22,63 | 7,46 | 3,24 | 5,99e-05 | 0,0013 | 0 | 0 | 0 | 37,17 | 45,58 | 34,99 | 40,66 | Upregulated | 1 | 0 | 1 | DELs |
 | CL.10553 | 2085,90 | 1,43 | 0,25 | 1,37e-09 | 7,85e-08 | 935,80 | 1134,72 | 984,11 | 2047,18 | 3016,90 | 2625,44 | 3857,12 | Upregulated | 2 | 2 | 0 | DEGs |
 | CL.10555 | 50,50 | 4,36 | 1,39 | 5,23e-05 | 0,0012 | 0 | 7,31 | 0 | 83,26 | 130,95 | 69,97 | 62,02 | Upregulated | 1 | 0 | 1 | DELs |
-| CL.1059 | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
 
 2. `per_gene_pairwise_categories_correlation.csv` – A table showing pairwise expression profile correlations across categories (DEGs vs. DELs, DEGs vs. Hybrid, and DELs vs. Hybrid). It includes gene IDs, their respective categories, correlation values, raw p-values, and FDR-adjusted p-values.
 
