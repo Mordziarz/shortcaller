@@ -9,7 +9,7 @@ A Nextflow pipeline for short-read RNA-seq analysis, supporting differential exp
 * **Alternative Splicing Analysis:** rMATS (https://doi.org/10.1073/pnas.1419161111) , sashimi plots (https://github.com/Xinglab/rmats2sashimiplot).
 * **Downstream Analysis:** CPC2 (coding potential; https://doi.org/10.1093/nar/gkx428) and TransDecoder (NMD prediciton; https://github.com/TransDecoder/TransDecoder).
 
-  ![workflow](plots/workflow.png)
+  ![workflow](plots/workflow.jpg)
 
 ## Upcoming Features
 * Single Nucleotide Variant (SNV) calling
