@@ -129,3 +129,8 @@ The `results/DEGs_DELs_Hybrid` directory contains visualization plots and two pr
   ![circos_degs_dels_hybrid](plots/circos_DEGs_DELs_Hybrid.png)
 
 ## Kmeans Genes Analysis
+
+![expression_cluster1](plots/expression_cluster_g1.png)
+![expression_cluster2](plots/expression_cluster_g2.png)
+![expression_cluster3](plots/expression_cluster.png)
+![expression_cluster4](plots/expression_cluster_type.png)
