@@ -2,7 +2,7 @@
 A Nextflow pipeline for short-read RNA-seq analysis, supporting differential expression and alternative splicing.
 
 ## Current Features
-* **Quality Control & Trimming:** FastQC (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ ) and Fastp (https://doi.org/10.1093/bioinformatics/bty560).
+* **Quality Control & Trimming:** FastQC (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), multiqc (https://doi.org/10.1093/bioinformatics/btw354) and Fastp (https://doi.org/10.1093/bioinformatics/bty560).
 * **Alignment:** STAR (https://doi.org/10.1093/bioinformatics/bts635).
 * **Transcript Assembly & Quantification:** StringTie (https://doi.org/10.1038/nbt.3122) and FeatureCounts (https://doi.org/10.1093/bioinformatics/btt656).
 * **Differential Expression Analysis:** DESeq2 (https://doi.org/10.1186/s13059-014-0550-8).
