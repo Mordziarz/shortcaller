@@ -1,5 +1,5 @@
 # shortcaller
-A Nextflow pipeline for short-read RNA-seq analysis, supporting differential expression and alternative splicing.
+A Nextflow pipeline for short-read RNA-seq analysis, supporting differential expression, alternative splicing and circular RNA.
 
 ## Current Features
 * **Quality Control & Trimming:** FastQC (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), multiqc (https://doi.org/10.1093/bioinformatics/btw354) and Fastp (https://doi.org/10.1093/bioinformatics/bty560).
