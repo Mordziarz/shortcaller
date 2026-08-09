@@ -326,6 +326,16 @@ The `results/kmeans_results` directory contains the outputs for this section. I 
 
 ## CircRNA analysis
 
+The results/ciri2 directory contains output files from the circRNA detection process. Since this analysis is highly specific, data interpretation should be tailored to each individual project. Each table was generated separately for each sample and has the following structure:
+
+| circRNA_ID | chr | circRNA_start | circRNA_end | #junction_reads | SM_MS_SMS | #non_junction_reads | junction_reads_ratio | circRNA_type | gene_id | strand | junction_reads_ID |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| chr1:27131522\|27132831 | chr1 | 27131522 | 27132831 | 31 | 1_2_0 | 108 | 0.365 | exon | CL.2899, | - | A00553:235:H2C5GDSX7:1:2468:... |
+| chr1:75034213\|75034420 | chr1 | 75034213 | 75034420 | 12 | 0_2_1 | 151 | 0.137 | exon | CL.7863, | - | A00553:235:H2C5GDSX7:1:2676:... |
+| chr3:34781099\|34782742 | chr3 | 34781099 | 34782742 | 35 | 3_4_1 | 227 | 0.236 | exon | CL.18467, | + | A00553:235:H2C5GDSX7:1:2375:... |
+| chr3:54772757\|54957565 | chr3 | 54772757 | 54957565 | 21 | 5_5_0 | 93 | 0.311 | exon | CL.20643, | + | A00553:235:H2C5GDSX7:1:2430:... |
+| chr4:5639203\|5695678 | chr4 | 5639203 | 5695678 | 15 | 5_1_1 | 9102 | 0.003 | intergenic_region | n/a | - | A00553:235:H2C5GDSX7:1:1156:... |
+
 ## Citation
 
 If you draw inspiration from the solutions I used in this pipeline, please feel free to cite me.
