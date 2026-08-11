@@ -395,8 +395,6 @@ Filtered dataset containing exclusively statistically significant variants ($p_{
   ![SNV4](plots/circlize_snv_significant.png)
 
 
-
-
 ## CircRNA analysis
 
 The results/ciri2 directory contains output files from the circRNA detection process. Since this analysis is highly specific, data interpretation should be tailored to each individual project. Each table was generated separately for each sample and has the following structure:
