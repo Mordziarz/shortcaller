@@ -12,7 +12,7 @@ A Nextflow pipeline for short-read RNA-seq analysis, supporting differential exp
 * **Visualization:** ComplexHeatmap (https://doi.org/10.1002/imt2.43), circlize (https://doi.org/10.1093/bioinformatics/btu393), ggplot2 (https://doi.org/10.1007/978-3-319-24277-4_9)
 * **Circular RNA:** bwa (https://doi.org/10.1093/bioinformatics/btp324), CIRI2 (https://doi.org/10.1093/bib/bbx014).
 
-  ![workflow1](plots/workflow.jpg)
+  ![workflow2](plots/workflow.jpg)
 
 ## Upcoming Features
 * Alternative Polyadenylation (APA)
