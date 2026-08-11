@@ -7,6 +7,7 @@ A Nextflow pipeline for short-read RNA-seq analysis, supporting differential exp
 * **Transcript Assembly & Quantification:** StringTie (https://doi.org/10.1038/nbt.3122) and FeatureCounts (https://doi.org/10.1093/bioinformatics/btt656).
 * **Differential Expression Analysis:** DESeq2 (https://doi.org/10.1186/s13059-014-0550-8).
 * **Alternative Splicing Analysis:** rMATS (https://doi.org/10.1073/pnas.1419161111) , sashimi plots (https://github.com/Xinglab/rmats2sashimiplot).
+* **Single Nucletide Variants Analysis:** freebayes (https://doi.org/10.48550/arXiv.1207.3907), bcftools (https://doi.org/10.1093/gigascience/giab008), snpeff (https://doi.org/10.4161/fly.19695).
 * **Downstream Analysis:** gffread (transcripts fasta, https://doi.org/10.12688/f1000research.23297.2), CPC2 (coding potential; https://doi.org/10.1093/nar/gkx428) and TransDecoder/rtracklayer (NMD prediciton; https://github.com/TransDecoder/TransDecoder, https://doi.org/10.1093/bioinformatics/btp328).
 * **Visualization:** ComplexHeatmap (https://doi.org/10.1002/imt2.43), circlize (https://doi.org/10.1093/bioinformatics/btu393), ggplot2 (https://doi.org/10.1007/978-3-319-24277-4_9)
 * **Circular RNA:** bwa (https://doi.org/10.1093/bioinformatics/btp324), CIRI2 (https://doi.org/10.1093/bib/bbx014).
@@ -14,7 +15,6 @@ A Nextflow pipeline for short-read RNA-seq analysis, supporting differential exp
   ![workflow](plots/workflow.jpg)
 
 ## Upcoming Features
-* Single Nucleotide Variant (SNV) calling
 * Alternative Polyadenylation (APA)
 
 ## Prerequisites & Environment
