@@ -177,7 +177,7 @@ In the `results/splicing_plots_and_tables` directory:
 * **Barplot** showing both significant and non-significant splicing events:
   ![Splicing1](plots/splicing_events_barplot.png)
 
-* **Barplot** showing only significant splicing events:
+* **Barplot** showing splicing events:
   ![Splicing2](plots/splicing_events_total_barplot.png)
 
 * **Volcano plot** of splicing events:
@@ -323,6 +323,79 @@ The `results/kmeans_results` directory contains the outputs for this section. I 
 
 * **Example barplot  plot** association between expression groups and significant alternative splicing events:
   ![expression_cluster4](plots/expression_cluster_type.png)
+
+## Single Nucleotide Variants
+
+The results/snv_plots_and_tables directory contains generated tables and summary plots for Single Nucleotide Variants (SNVs).
+
+### Column Descriptions
+
+| Column Name | Category | Description |
+| :--- | :--- | :--- |
+| `CHROM`, `POS`, `REF`, `ALT` | Variant Info | Chromosome, genomic position, reference allele, and alternative allele. |
+| `Ann_Allele` | Variant Info | Annotated alternative allele. |
+| `p_value` | Statistics | P-value derived from the Chi-square test evaluating group differences. |
+| `p_adj` | Statistics | Adjusted p-value using the Benjamini-Hochberg (FDR) method. |
+| `AltAllelleFracDifference` | Statistics | Direction of alternative allele frequency change (`Higher`, `Lower`, or `Not significant`). |
+| `Significance` | Statistics | Statistical significance status (`Significant` or `Not Significant`). |
+| `Effect`, `Impact`, `Feature_Type` | Functional Annotation | Biological effect category (SnpEff), predicted impact, and genomic feature type. |
+| `Gene_Name`, `Gene_ID` | Functional Annotation | Gene name and unique gene identifier. |
+| `transcript_id`, `BioType`, `Rank` | Functional Annotation | Transcript identifier, biological type, and exon/intron rank. |
+| `HGVS_c`, `HGVS_p` | Functional Annotation | Coding DNA sequence change (`c.`) and protein level change (`p.`). |
+| `GT_[sample]` | Raw Metrics | Sample genotype (e.g., `0/1`, `1/1`). |
+| `DP_[sample]` | Raw Metrics | Total read depth for the specified sample. |
+| `RO_[sample]` | Raw Metrics | Reference observation count (reads supporting the reference allele). |
+| `AO_[sample]` | Raw Metrics | Alternative observation count (reads supporting the alternative allele). |
+| `RF_[sample]` | Frequencies | Reference allele frequency ($RO / DP$). |
+| `AF_[sample]` | Frequencies | Alternative allele frequency ($AO / DP$). |
+| `delta_AF`, `delta_RF` | Frequencies | Difference in mean allele frequencies between groups (Group 2 - Group 1). |
+| `Simple_Effect` | Visualization | Simplified functional effect category (e.g., `Missense`, `3' UTR`, `5' UTR`, `Synonymous`, `Other`). |
+| `Plot_Effect` | Visualization | Category incorporating statistical significance for volcano plots. |
+
+---
+### Data Tables
+
+1. All_snv.csv
+Complete dataset of all detected SNV variants with calculated statistics and metrics across all samples:
+
+| CHROM | POS | REF | ALT | p_value | p_adj | Effect | Gene_Name | HGVS_c | HGVS_p | delta_AF | Simple_Effect |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `chr7` | 2281324 | `T` | `A` | $1.74 \times 10^{-261}$ | $4.78 \times 10^{-258}$ | missense_variant | `CL.35124` | c.627T>A | p.Asp209Glu | -0.378 | Missense |
+| `chr4` | 5695637 | `T` | `G` | $1.27 \times 10^{-223}$ | $1.75 \times 10^{-220}$ | synonymous_variant | `CL.21691` | c.225A>C | p.Ser75Ser | 0.516 | Synonymous |
+| `chr7` | 2281591 | `T` | `A` | $3.13 \times 10^{-142}$ | $2.87 \times 10^{-139}$ | missense_variant | `CL.35124` | c.695T>A | p.Leu232His | -0.295 | Missense |
+| `plastome` | 41434 | `T` | `A` | $2.71 \times 10^{-123}$ | $1.87 \times 10^{-120}$ | downstream_gene_variant | `CL.45843` | c.*1390A>T | - | 0.233 | Other |
+| `chr7` | 2281563 | `C` | `T` | $1.69 \times 10^{-117}$ | $9.33 \times 10^{-115}$ | missense_variant | `CL.35124` | c.667C>T | p.Arg223Trp | -0.283 | Missense |
+
+#### 2. SNV_significant_results.csv
+Filtered dataset containing exclusively statistically significant variants ($p_{adj} < 0.05$ and $|\Delta AF| > 0.1$):
+
+| CHROM | POS | REF | ALT | p_value | p_adj | Effect | Gene_Name | delta_AF | Significance | AltAllelleFracDifference |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `chr7` | 2281324 | `T` | `A` | $1.74 \times 10^{-261}$ | $4.78 \times 10^{-258}$ | missense_variant | `CL.35124` | -0.378 | Significant | Lower |
+| `chr4` | 5695637 | `T` | `G` | $1.27 \times 10^{-223}$ | $1.75 \times 10^{-220}$ | synonymous_variant | `CL.21691` | 0.516 | Significant | Higher |
+| `chr7` | 2281591 | `T` | `A` | $3.13 \times 10^{-142}$ | $2.87 \times 10^{-139}$ | missense_variant | `CL.35124` | -0.295 | Significant | Lower |
+
+---
+
+### Visualizations
+
+* **Barplot** showing the distribution of all detected SNV events across functional categories:
+  ![SNV1](plots/single_nucleotide_variant_barplot.png)
+
+* **Barplot** summarizing significant versus non-significant variants:
+  ![SNV2](plots/single_nucleotide_variant_total_barplot.png)
+
+* **Volcano plot** for SNV variants:
+  ![SNV3](plots/volcano_single_nucleotide_variant.png)
+
+* **Circos plot** integrating:
+  1. Five heatmaps showing allele frequency levels for distinct variant types.
+  2. A track indicating the direction of alternative allele frequency changes (`Higher` / `Lower`).
+  3. Internal links connecting common variants within the same gene (`Gene_ID`).
+  ![SNV4](plots/circlize_snv_significant.png)
+
+
+
 
 ## CircRNA analysis
 
