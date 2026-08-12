@@ -44,7 +44,7 @@ B_8,B4_1.test.fq.gz,B4_2.test.fq.gz,B
 ```
 ## Basic usage
 ```
-nextflow run main.nf --sample_table samples_table.csv --fasta reference_genome.fasta --gtf reference_gtf.gtf -profile standard
+nextflow run Mordziarz/shortcaller -r main -profile standard --sample_table samples.csv --fasta genome.fasta --gtf your_gtf.gtf
 ```
 
 ## Parameters that can be defined
