@@ -14,6 +14,8 @@ A Nextflow pipeline for short-read RNA-seq analysis, supporting differential exp
 
   ![workflow3](plots/workflow2.jpg)
 
+## Test data
+The pipeline was tested on data deposited in ENA: PRJEB72692, PRJEB74103.
 
 ## Upcoming Features
 * Alternative Polyadenylation (APA)
