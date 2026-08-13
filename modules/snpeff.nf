@@ -14,6 +14,8 @@ process SNPEFF {
     path "snpEff_summary.html", emit: html
 
     script:
+    def java_mem = task.memory ? "-Xmx${task.memory.toGiga() - 1}g" : "-Xmx7g"
+
     """
     mkdir -p data/my_organism
     
@@ -22,9 +24,9 @@ process SNPEFF {
     
     echo "my_organism.genome : my_organism" >> snpEff.config
     
-    snpEff build -gff3 -v -noCheckCds -noCheckProtein my_organism
+    snpEff ${java_mem} build -gff3 -v -noCheckCds -noCheckProtein my_organism
     
-    snpEff -v my_organism ${vcf} > temp_annotated.vcf
+    snpEff ${java_mem} -v my_organism ${vcf} > temp_annotated.vcf
 
     bgzip -c temp_annotated.vcf > annotated_variants.vcf.gz
     tabix -p vcf annotated_variants.vcf.gz
