@@ -68,6 +68,7 @@ nextflow run Mordziarz/shortcaller -r main -profile standard --sample_table samp
 | `threads_stringtie` | `4` | CPU threads allocated to StringTie. |
 | `threads_featurecounts` | `4` | CPU threads allocated to FeatureCounts. |
 | `threads_rmats` | `8` | CPU threads allocated to rMATS. |
+| `snpeff_memory` | `16.GB` | java RAM |
 
 ## Differentially Expressed Genes Analysis
 
