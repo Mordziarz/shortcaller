@@ -302,6 +302,22 @@ cat("--- Generating Circos Plot for DEGs, DELs, Hybrid with exact legend style f
 categories_list <- c("DEGs", "DELs", "Hybrid")
 filtered_df <- Final_ekspresja %>% filter(Transcripts %in% categories_list & Expression != "No significant")
 
+gene_counts <- sapply(categories_list, function(cat) sum(filtered_df$Transcripts == cat))
+
+cat("Gene counts per category for Circos plot:\n")
+print(gene_counts)
+
+if (any(gene_counts < 2)) {
+  
+  failing_cats <- names(gene_counts[gene_counts < 2])
+  warning(paste0(
+    "Skipping Circos plot generation! The following categories have fewer than 2 genes: ",
+    paste(failing_cats, collapse = ", "), 
+    ". hclust requires at least 2 objects per sector."
+  ))
+  
+} else {
+
 types_subset <- intersect(categories_list, unique(filtered_df$Transcripts))
 filtered_df$Transcripts <- factor(filtered_df$Transcripts, levels = types_subset)
 
@@ -491,3 +507,4 @@ circos.clear()
 dev.off()
 
 cat("--- Circos plot generated successfully with reference legend style ---\n")
+}
