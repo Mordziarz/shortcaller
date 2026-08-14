@@ -20,6 +20,8 @@ process FASTP {
         --cut_front --cut_tail \\
         --cut_mean_quality ${params.trim_avgqual} \\
         --length_required ${params.trim_minlen} \\
+        --max_len1 ${params.trim_minlen} \\
+        --max_len2 ${params.trim_minlen} \\
         --json ${sample}.fastp.json \\
         --html ${sample}.fastp.html
     """
