@@ -46,6 +46,8 @@ with open("g2_name.txt", "w") as f_g2:
 print(f"Group 1 (b1): {g1_name} with samples {groups_dict[g1_name]}")
 print(f"Group 2 (b2): {g2_name} with samples {groups_dict[g2_name]}")
 
+all_bams = glob.glob("*Aligned.sortedByCoord.out.bam") 
+
 bam_map = {}
 for b in all_bams:
     for sample in groups_dict[g1_name] + groups_dict[g2_name]:
