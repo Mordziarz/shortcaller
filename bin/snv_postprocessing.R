@@ -139,12 +139,25 @@ p_values <- map_dbl(valid_variants_chisq, function(sub_df) {
   tryCatch({ chisq.test(mat)$p.value }, error = function(e) { 1.0 })
 })
 
-results_chisq <- data.table(choosen_variant = names(p_values), p_value = p_values)
-results_chisq[, c("CHROM", "POS", "REF", "ALT") := tstrsplit(choosen_variant, "\\.")]
-results_chisq[, POS := as.integer(POS)]
-results_chisq[, choosen_variant := NULL]
-results_chisq[, p_adj := p.adjust(p_value, method = "BH")]
+#results_chisq <- data.table(choosen_variant = names(p_values), p_value = p_values)
+#results_chisq[, c("CHROM", "POS", "REF", "ALT") := tstrsplit(choosen_variant, "\\.")]
+#results_chisq[, POS := as.integer(POS)]
+#results_chisq[, choosen_variant := NULL]
+#results_chisq[, p_adj := p.adjust(p_value, method = "BH")]
 
+chisq_list_results <- lapply(names(p_values), function(variant_key) {
+  sub_df <- valid_variants_chisq[[variant_key]]
+  data.table(
+    CHROM = sub_df$CHROM[1],
+    POS = as.integer(sub_df$POS[1]),
+    REF = sub_df$REF[1],
+    ALT = sub_df$ALT[1],
+    p_value = p_values[[variant_key]]
+  )
+})
+
+results_chisq <- rbindlist(chisq_list_results)
+results_chisq[, p_adj := p.adjust(p_value, method = "BH")]
 
 dt_wide_all_metrics <- dcast(
   dt_wide_samples, 
