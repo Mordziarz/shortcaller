@@ -336,7 +336,7 @@ if (nrow(Splic_sig) == 0) {
       "#ffffb2","#fed976","#feb24c","#fd8d3c","#f03b20","#bd0026")  
   )
   
-  png("circlize_splicing_significant.png", width = 14, height = 16, units = 'in', res = 600)
+  png("circlize_splicing_significant.png", width = 14.7, height = 17, units = 'in', res = 600)
   
   plot.new()
   circle_size = unit(1, "snpc") 
