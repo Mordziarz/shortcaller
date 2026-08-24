@@ -16,7 +16,7 @@ process FREEBAYES {
         samtools faidx ${fasta}
     fi
 
-    samtools index ${bam}
+    samtools index -c ${bam}
     
     freebayes -f ${fasta} \
         --min-mapping-quality 20 \
