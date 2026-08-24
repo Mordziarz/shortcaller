@@ -13,7 +13,7 @@ process PREPARE_RMATS {
     script:
     """
     for bam in *Aligned.sortedByCoord.out.bam; do
-        samtools index \$bam
+        samtools index -c \$bam
     done
     
     python3 - << 'EOF'
