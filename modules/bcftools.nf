@@ -7,7 +7,7 @@ process MERGE_VCFS {
 
     output:
     path "merged_variants.vcf.gz", emit: merged_vcf
-    path "merged_variants.vcf.gz.tbi", emit: merged_index
+    path "merged_variants.vcf.gz.csi", emit: merged_index
 
     script:
     """

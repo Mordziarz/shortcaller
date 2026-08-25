@@ -10,7 +10,7 @@ process SNPEFF {
 
     output:
     path "annotated_variants.vcf.gz", emit: vcf
-    path "annotated_variants.vcf.gz.tbi", emit: index
+    path "annotated_variants.vcf.gz.csi", emit: index
     path "snpEff_summary.html", emit: html
 
     script:
@@ -29,7 +29,7 @@ process SNPEFF {
     snpEff ${java_mem} -v my_organism ${vcf} > temp_annotated.vcf
 
     bgzip -c temp_annotated.vcf > annotated_variants.vcf.gz
-    tabix -p vcf annotated_variants.vcf.gz
+    bcftools index -c annotated_variants.vcf.gz
     rm temp_annotated.vcf
     """
 }
