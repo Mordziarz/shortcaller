@@ -16,12 +16,12 @@ process MERGE_VCFS {
         echo "\$SAMPLENAME" > \${SAMPLENAME}_name.txt
         bcftools view -O z -o \${file}.gz \$file
         bcftools reheader -s \${SAMPLENAME}_name.txt -o \${SAMPLENAME}_ready.vcf.gz \${file}.gz
-        bcftools index -t \${SAMPLENAME}_ready.vcf.gz
+        bcftools index -c \${SAMPLENAME}_ready.vcf.gz
     done
 
     bcftools merge -m all -0 -O z -o temp_merged.vcf.gz *_ready.vcf.gz
     bcftools norm -m -any -O z -o merged_variants.vcf.gz temp_merged.vcf.gz
-    bcftools index -t merged_variants.vcf.gz
+    bcftools index -c merged_variants.vcf.gz
     """
 }
 
