@@ -45,6 +45,12 @@ B_7,B3_1.test.fq.gz,B3_2.test.fq.gz,B
 B_8,B4_1.test.fq.gz,B4_2.test.fq.gz,B
 ```
 ## Basic usage
+Nextflow version:
+
+```bash
+export NXF_VER=24.04.4
+```
+
 ```
 nextflow run Mordziarz/shortcaller -r main -profile standard --sample_table samples.csv --fasta genome.fasta --gtf your_gtf.gtf
 ```
