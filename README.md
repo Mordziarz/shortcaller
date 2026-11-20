@@ -1,3 +1,6 @@
+[![Nextflow](https://img.shields.io/badge/Nextflow-%3D24.04.4-brightgreen.svg)](https://www.nextflow.io/)
+[![Docker](https://img.shields.io/badge/Docker-containerized-blue.svg)](https://www.docker.com/)
+
 # shortcaller
 A Nextflow pipeline for short-read RNA-seq analysis, supporting differential expression, alternative splicing, single nucleotide variant and circular RNA.
 
